@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { InteractionService } from './interaction.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,14 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'RxSubject';
+
+  constructor(private _interactionService: InteractionService) {}
+
+  greetStudent() {
+    this._interactionService.sendMessage('Good Morning');
+  }
+
+  appreciateStudent() {
+    this._interactionService.sendMessage('Well Done');
+  }
 }
